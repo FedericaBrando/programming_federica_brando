@@ -29,7 +29,8 @@ def score_blosum50():
 		
 		for base1,base2 in zip(seq1,seq2):
 			score+=int(blosumdict[base1+base2])
-					
+		
+		blosum50.close()		
 	return score
 
 print(score_blosum50())

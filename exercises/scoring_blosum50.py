@@ -28,22 +28,7 @@ def score_blosum50():
 			for res2 in aa:
 				blosumdict[res+res2]=0
 
-		for k in blosumdict:
-			for j in range(len(blosum)):
-				for i in range(len(blosum)):
-					print(blosum[j][i])
-					blosumdict.update(k = blosum[j][i])
 		
-		#for line in blosum:
-		#	print(line)
-		#	for score,i in zip(line, blosumdict):
-		#		print(score)
-		#		blosumdict[i]=score
-				#blosumdict[i]=score
-
-		#for i in blosumdict:
-		#	blosumdict
-				
 				
 	return blosumdict
 

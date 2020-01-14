@@ -6,7 +6,6 @@ def score_ali(list1,list2,matrix_score):
 			score += matrix_score[base1+base2]
 		elif (base1=="-" and base2!="-") or (base1!="-" and base2=="-"):			
 			score -= 2
-		
 	return score
 
 def ali():

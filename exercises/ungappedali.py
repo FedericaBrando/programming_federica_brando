@@ -60,7 +60,7 @@ def reverse(seqA,seqB,listali):
 			seqB="-" + seqB[:-1]
 			#print("elif1", seqA,seqB)
 			reverse(seqA,seqB,listali)
-			return "\nciao"
+			return "\nSo far, so good"
 	
 		elif seqB[-1]!="-" and seqA[-1]!="-":
 			seqB="-" + seqB[:-1]

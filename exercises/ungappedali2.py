@@ -1,3 +1,6 @@
+##WARNING, this code is not perfect##
+
+
 def score_ali(list1,list2,matrix_score):
     ''' Function that computes the score between two sequences. Input values are: sequence one, sequence two, and the scoring matrix chosen '''
     score=0

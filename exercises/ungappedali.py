@@ -6,9 +6,8 @@ def score_ali(list1,list2,matrix_score):
 		if base1+base2 in matrix_score:
 			score += matrix_score[base1+base2]
 		elif (base1=="-" and base2!="-") or (base1!="-" and base2=="-"):			
-			score += -2
-		else:
-			score+=0
+			score -= 2
+		
 	return score
 
 def ali():
@@ -16,9 +15,11 @@ def ali():
 	seq2=input("gimme the second sequence: ")
 
 	if len(seq1)>len(seq2):
+
 		seqA=len(seq2)*"-"+seq1
 		seqB=seq2+"-"*len(seq1)
 	else:
+
 		seqA=len(seq1)*"-"+seq2
 		seqB=seq1+"-"*len(seq2)
 
@@ -42,43 +43,45 @@ def ali():
 		listali.append(align)
 		#print(listali)
 	
-		if seqB[-1]=="-" and seqA[-1]=="-":
-			#print(seqA)
-			#print(seqB)
-			#print("if ",seqA, seqB) 
-			#print(listali)
+		if seqB[-1]!="-" and seqA[0]!="-":
 			maximo=listali[0][2]
-			#print(maximo)
 			for i in range(len(listali)):
 				if listali[i][2] > maximo:
-					#print(listali[i][2], maximo)
+
 					maximo=listali[i][2]
-					#print(maximo)
 					indice=i
-					#print(indice)
 					final=[listali[indice][0],listali[indice][1],maximo]
-			print("the best ali is:\n", str(final[0]), "\n", str(final[1]), "\n", "best score: ", final[2] )
-			#return final
+
+				elif listali[i][2] == maximo:
+					otherali=[listali[i][0],listali[i][1]]
+
+			print("\nthe best ali is:\n", str(final[0]), "\n", str(final[1]), "\nand\n", str(otherali[0]), "\n", str(otherali[1]), "\n", "best score: ", final[2] )
+			
 		else:	
 	
-			if seqB[-1]=="-" and seqA[-1]!="-":
+			if seqB[-1]=="-" and seqA[-1]!="-": #seqB è "-" e seqA è "lettera"
+
 				seqB="-" + seqB[:-1]
-				#print("elif1", seqA,seqB)
+				#print("elif1","\n", seqA,"\n",seqB)
 				reverse(seqA,seqB,listali)
 				return "\nSo far, so good"
 		
-			elif seqB[-1]!="-" and seqA[-1]!="-":
-				seqB="-" + seqB[:-1]
-				seqA=seqA+"-"
-				#print("elif2", seqA,seqB)
+			elif seqB[-1]!="-" and seqA[-1]!="-": #seqB è "lettera" e seqA è "lettera"
+
+				seqB="-" + seqB
+				seqA=seqA[1:]+"-"
+				#print("elif2","\n", seqA,"\n",seqB)
 				reverse(seqA,seqB,listali)		
 				return 
-			elif seqA[-1]=="-" and seqB[-1]!="-":
-				seqB="-"+ seqB[:-1]
-				#print("elif3", seqA,seqB)
+
+			elif seqA[0]=="-" and seqB[0]=="-": #seqB è "lettera" e seqB è "-" 
+
+				#seqB="-"+ seqB[:-1]
+				seqA=seqA[1:]+"-"
+				#print("elif3","\n", seqA,"\n",seqB)
 				reverse(seqA,seqB,listali)
 				return 
-		
+			
  	
 	return reverse(seqA,seqB,listali)
 	

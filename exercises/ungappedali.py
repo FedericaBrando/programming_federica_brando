@@ -31,7 +31,7 @@ def reverse(seqA,seqB,listali):
 	#print(seqA)
 	#print(seqB)
 	score=score_ali(seqA,seqB,matrix_score)
-	print(score)
+	#print(score)
 	align=[]
 	align=[seqA , seqB, score]
 	listali.append(align)
@@ -40,17 +40,17 @@ def reverse(seqA,seqB,listali):
 	if seqB[-1]=="-" and seqA[-1]=="-":
 		#print(seqA)
 		#print(seqB)
-		print("if ",seqA, seqB) 
-		print(listali)
+		#print("if ",seqA, seqB) 
+		#print(listali)
 		maximo=listali[0][2]
 		#print(maximo)
 		for i in range(len(listali)):
 			if listali[i][2] > maximo:
-				print(listali[i][2], maximo)
+				#print(listali[i][2], maximo)
 				maximo=listali[i][2]
-				print(maximo)
+				#print(maximo)
 				indice=i
-				print(indice)
+				#print(indice)
 				final=[listali[indice][0],listali[indice][1],maximo]
 		print("the best ali is:\n", str(final[0]), "\n", str(final[1]), "\n", "best score: ", final[2] )
 		#return final
@@ -58,27 +58,27 @@ def reverse(seqA,seqB,listali):
 
 		if seqB[-1]=="-" and seqA[-1]!="-":
 			seqB="-" + seqB[:-1]
-			print("elif1", seqA,seqB)
+			#print("elif1", seqA,seqB)
 			reverse(seqA,seqB,listali)
 			return "\nciao"
 	
 		elif seqB[-1]!="-" and seqA[-1]!="-":
 			seqB="-" + seqB[:-1]
 			seqA=seqA+"-"
-			print("elif2", seqA,seqB)
+			#print("elif2", seqA,seqB)
 			reverse(seqA,seqB,listali)		
 			return 
 		elif seqA[-1]=="-" and seqB[-1]!="-":
 			seqB="-"+ seqB[:-1]
-			print("elif3", seqA,seqB)
+			#print("elif3", seqA,seqB)
 			reverse(seqA,seqB,listali)
 			return 
  
 
 	
 	
-seq1="ATTGTATAAATT"
-seq2="TT"
+seq1=input("gimme the first sequence: ")
+seq2=input("gimme the second sequence: ")
 
 if len(seq1)>len(seq2):
 	seqA=len(seq2)*"-"+seq1

@@ -87,7 +87,7 @@ def ali():
 	
 	
 	
-print(ali())
+ali()
 
 
 	

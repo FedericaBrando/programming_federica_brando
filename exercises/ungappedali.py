@@ -1,8 +1,7 @@
-
 def score_ali(list1,list2,matrix_score):
 	''' Function that computes the score between two sequences. Input values are: sequence one, sequence two, and the scoring matrix chosen '''
 	score=0
-	for base1,base2 in zip(list1,list2):			#scorre base1 e base 2 insieme lungo le sequenze
+	for base1,base2 in zip(list1,list2):	#scorre base1 e base 2 insieme lungo le sequenze
 		if base1+base2 in matrix_score:
 			score += matrix_score[base1+base2]
 		elif (base1=="-" and base2!="-") or (base1!="-" and base2=="-"):			
@@ -34,10 +33,10 @@ def ali():
         	        'GA': 0, 'GC':-1, 'GT':-1, 'GG': 2}
 		score=0
 	
-		#print(seqA)
-		#print(seqB)
+		print(seqA)
+		print(seqB)
 		score=score_ali(seqA,seqB,matrix_score)
-		#print(score)
+		print(score)
 		align=[]
 		align=[seqA , seqB, score]
 		listali.append(align)
@@ -54,8 +53,10 @@ def ali():
 
 				elif listali[i][2] == maximo:
 					otherali=[listali[i][0],listali[i][1]]
+			
 
-			print("\nthe best ali is:\n", str(final[0]), "\n", str(final[1]), "\nand\n", str(otherali[0]), "\n", str(otherali[1]), "\n", "best score: ", final[2] )
+			print("the best ali is:\n", str(final[0]),"\n", str(final[1]), "\nand\n", str(otherali[0]),"\n", str(otherali[1]), "\nbest score: ", final[2])
+			return 
 			
 		else:	
 	
@@ -63,24 +64,23 @@ def ali():
 
 				seqB="-" + seqB[:-1]
 				#print("elif1","\n", seqA,"\n",seqB)
-				reverse(seqA,seqB,listali)
-				return "\nSo far, so good"
+				return reverse(seqA,seqB,listali)
+				#return "\nSo far, so good"
 		
 			elif seqB[-1]!="-" and seqA[-1]!="-": #seqB è "lettera" e seqA è "lettera"
 
 				seqB="-" + seqB
 				seqA=seqA[1:]+"-"
 				#print("elif2","\n", seqA,"\n",seqB)
-				reverse(seqA,seqB,listali)		
-				return 
+						
+				return reverse(seqA,seqB,listali)
 
 			elif seqA[0]=="-" and seqB[0]=="-": #seqB è "lettera" e seqB è "-" 
 
 				#seqB="-"+ seqB[:-1]
 				seqA=seqA[1:]+"-"
 				#print("elif3","\n", seqA,"\n",seqB)
-				reverse(seqA,seqB,listali)
-				return 
+				return reverse(seqA,seqB,listali)
 			
  	
 	return reverse(seqA,seqB,listali)

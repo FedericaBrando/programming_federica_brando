@@ -31,9 +31,8 @@ def scoring_dic():
             if (aa1+aa2 not in sc_dict) and (aa2+aa1 not in sc_dict):
                 sc_dict[aa1+aa2] = 0
 
-
     i = 0
-    while i < len(sc_dict):  # fin tanto che i è minore di len(sc_dict) in questo caos 400
+    while i < len(sc_dict):  # fin tanto che i è minore di len(sc_dict) in questo caso 210
         line = sc_mx_file.readline()
         line = line.split()
         line = line

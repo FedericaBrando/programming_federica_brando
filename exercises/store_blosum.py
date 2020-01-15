@@ -4,7 +4,7 @@
 ################################################################################################
 
 
-def get_nth_key(dictionary, n):
+def get_nth_key(dictionary, n):  # indicizza il dizionario
     if n < 0:
         newn = input('n must be grater than 0, please insert a new number: ')
         return get_nth_key(dictionary, int(newn))
@@ -19,8 +19,8 @@ def get_nth_key(dictionary, n):
 
 
 def scoring_dic():
-    filepath = input('insert the path file for the scoring matrix: ')
-    # filepath = '../data/score_mx.txt'
+    #filepath = input('insert the path file for the scoring matrix: ')
+    filepath = '../data/score_mx.txt'
     sc_mx_file = open(filepath, 'r')
     aa = sc_mx_file.readline()
     aa = aa.split()
@@ -36,7 +36,7 @@ def scoring_dic():
         line = line.split()
         line = line[1:]
         for val in line:
-            sc_dict[get_nth_key(sc_dict, i)] = val
+            sc_dict[get_nth_key(sc_dict, i)] = float(val)
             i += 1
     return sc_dict
 

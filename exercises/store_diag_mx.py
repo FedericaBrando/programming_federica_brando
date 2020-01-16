@@ -1,8 +1,7 @@
 ####################################################################################################
 # 4) Write a script that stores into a Python dictionary a substitution matrix in diagonal format. #
 ####################################################################################################
-#                                  one rule game: DO NOT USE LISTS.                                #
-####################################################################################################
+
 
 def get_nth_key(dictionary, n):  # indicizza il dizionario n è un intero
     if n < 0:
@@ -22,8 +21,7 @@ def scoring_dic():
     #filepath = input('insert the path file for the scoring matrix: ')
     filepath = '../data/PAM250.txt'
     sc_mx_file = open(filepath, 'r')
-    aa = sc_mx_file.readline()
-    aa = aa.split()
+    aa = 'ARNDCQEGHILKMFPSTWYV'
 
     sc_dict = {}
     for aa1 in aa:

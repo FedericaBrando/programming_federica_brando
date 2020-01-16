@@ -45,7 +45,6 @@ def ali(score_matrix):
         s2 = seq1+(len(seq2)*'-')
 
     max_tab = []  # inizializzo una lista vuota che conterrà i best alignment
-
     while s1[-1] == '-' or s2[0] == '-':  # fin tanto che la seq1/seq2 ha come ultimo/primo char '-' entra in while
 
         score = score_ali(s1, s2, score_matrix)  # Calcolo lo score dell'allineamento

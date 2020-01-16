@@ -22,21 +22,21 @@ def dic_pen(dictionary, pen_value):
     return dictionary
 
 
-def score_ali(seq1, seq2, score_dic):
+def score_ali(seq1, seq2, score_dic): #the commented part is done for gap penalty extension
     score = 0
-    gap_penalty = -2
-    ext = 0
-    g_e = 0.5
+    # gap_penalty = -2
+    # ext = 0
+    # g_e = 0.5
     if len(seq1) == len(seq2):
         for aa1, aa2 in zip(seq1, seq2):
-            if aa1 == '-' or aa2 == '-':
-                ext += 1
-                score += gap_penalty - (ext - 1) * g_e
-            elif aa1+aa2 in score_dic:
-                ext = 0
+            # if aa1 == '-' or aa2 == '-':
+            #     # ext += 1
+            #     score += gap_penalty - (ext - 1) * g_e
+            if aa1+aa2 in score_dic:
+                # ext = 0
                 score += score_dic[aa1+aa2]
             elif aa1+aa2 not in score_dic:
-                ext = 0
+                # ext = 0
                 score += score_dic[aa2+aa1]
             # elif aa1 == '-' or aa2 == '-':
             #     ext += 1

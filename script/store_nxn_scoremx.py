@@ -22,8 +22,7 @@ def scoring_dic():
     #filepath = input('insert the path file for the scoring matrix: ')
     filepath = '../data/score_mx.txt'
     sc_mx_file = open(filepath, 'r')
-    aa = sc_mx_file.readline()
-    aa = aa.split()
+    aa = sc_mx_file.readline().split()
 
     sc_dict = {}
     for aa1 in aa:

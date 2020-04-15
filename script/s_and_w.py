@@ -30,12 +30,10 @@ def score_trace(s1, s2, mx_sc, pen):
 
     # init first row
     for righe in range(R):
-        # F[righe][0] = righe * d
         P[righe][0] = 'u'
 
     # init first col
     for colonne in range(C):
-        # F[0][colonne] = colonne * d
         P[0][colonne] = 'l'
 
     P[0][0] = '0'
@@ -54,7 +52,7 @@ def score_trace(s1, s2, mx_sc, pen):
 
 
 def score_ali(F, P, seq1, seq2):
-    # i have to start from highest cell
+    # i have to start from highest score cell
     max = 0
     row = 0
     col = 0
@@ -113,8 +111,8 @@ def score_ali(F, P, seq1, seq2):
 #     seq2 += line
 ##############################################################################################################
 
-seq1 = 'GTAHLCAWGHELLLCGTA'
-seq2 = 'AWHETACC'
+seq1 = 'AAAAAAATTTAAAAAAAAA'
+seq2 = 'ATA'
 mx_file = open('../data/blosum.txt', 'r')
 S = matrix_dict(mx_file)
 print(S)

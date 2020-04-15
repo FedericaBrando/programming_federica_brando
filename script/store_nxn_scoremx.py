@@ -20,7 +20,7 @@ def get_nth_key(dictionary, n):  # indicizza il dizionario
 
 def scoring_dic():
     #filepath = input('insert the path file for the scoring matrix: ')
-    filepath = '../data/score_mx.txt'
+    filepath = '../data/blosum50.txt'
     sc_mx_file = open(filepath, 'r')
     aa = sc_mx_file.readline().split()
 

@@ -72,7 +72,7 @@ def ali_score(file_path_ali, score_dic):
 #    For gap penalty use a linear gap model with d = -2.
 
 # blosum_path = input('Insert BLOSUM scoring matrix file path: ')
-blosum_path = 'BLOSUM62.txt'
+blosum_path = '../data/BLOSUM62.txt'
 pen = -2
 # pen = input('insert penalty: ')
 blosum_dic = dic_pen(dic_matrix(blosum_path), pen)
